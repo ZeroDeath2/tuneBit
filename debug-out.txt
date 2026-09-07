@@ -1,0 +1,218 @@
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+◇ injected env (9) from .env.local // tip: ◈ secrets for agents [www.dotenvx.com]
+Renamed: 1. Blinding Lights.mp3 -> Blinding Lights.mp3
+Renamed: 2. Moth To A Flame (with The Weeknd).mp3 -> Moth To A Flame (with The Weeknd).mp3
+Renamed: 3. STAY (with Justin Bieber).mp3 -> STAY (with Justin Bieber).mp3
+Renamed: 4. Let Me Love You.mp3 -> Let Me Love You.mp3
+Renamed: 5. Fearless Pt. II.mp3 -> Fearless Pt. II.mp3
+Renamed: 6. Love Your Voice.mp3 -> Love Your Voice.mp3
+Renamed: 7. Heat Waves.mp3 -> Heat Waves.mp3
+Renamed: 8. Save Your Tears.mp3 -> Save Your Tears.mp3
+Renamed: 9. Closer.mp3 -> Closer.mp3
+Renamed: 10. Enemy (with JID) - from the series Arcane League of Legends.mp3 -> Enemy (with JID) - from the series Arcane League of Legends.mp3
+Renamed: 11. Believer.mp3 -> Believer.mp3
+Renamed: 12. FRIENDS.mp3 -> Marie - FRIENDS.mp3
+Renamed: 13. lovely (with Khalid).mp3 -> lovely (with Khalid).mp3
+Renamed: 14. On & On.mp3 -> On & On.mp3
+Renamed: 15. Despacito.mp3 -> Despacito.mp3
+Renamed: 16. Starboy.mp3 -> Starboy.mp3
+Renamed: 17. One Right Now (with The Weeknd).mp3 -> One Right Now (with The Weeknd).mp3
+Renamed: 18. Falling.mp3 -> Falling.mp3
+Renamed: 19. MIDDLE OF THE NIGHT.mp3 -> MIDDLE OF THE NIGHT.mp3
+Renamed: 20. Baby.mp3 -> Baby.mp3
+Renamed: 21. rockstar.mp3 -> rockstar.mp3
+Renamed: 22. Señorita.mp3 -> Señorita.mp3
+Renamed: 23. Love Me Like You Do - From "Fifty Shades Of Grey".mp3 -> Love Me Like You Do - From Fifty Shades Of Grey.mp3
+Renamed: 24. Safari.mp3 -> Safari.mp3
+Renamed: 25. Unstoppable.mp3 -> Unstoppable.mp3
+Renamed: 26. Bilionera - Radio Edit.mp3 -> Bilionera - Radio Edit.mp3
+Renamed: 27. Infinity.mp3 -> Infinity.mp3
+Renamed: 28. Sugar & Brownies.mp3 -> Sugar & Brownies.mp3
+Renamed: 29. Into Your Arms (feat. Ava Max).mp3 -> Into Your Arms (feat. Ava Max).mp3
+Renamed: 30. No Lie.mp3 -> No Lie.mp3
+Renamed: 31. Queen of Hearts.mp3 -> Queen of Hearts.mp3
+Renamed: 32. MONTERO (Call Me By Your Name).mp3 -> MONTERO (Call Me By Your Name).mp3
+Renamed: 33. Tu es la raison.mp3 -> Tu es la raison.mp3
+Could not find mp3 file for id 34
+Renamed: 35. Let Me Down Slowly.mp3 -> Let Me Down Slowly.mp3
+Renamed: 36. Levitating.mp3 -> Levitating.mp3
+Renamed: 37. Darkside.mp3 -> Darkside.mp3
+Renamed: 38. Dusk Till Dawn (feat. Sia) - Radio Edit.mp3 -> Dusk Till Dawn (feat. Sia) - Radio Edit.mp3
+Renamed: 39. Alone, Pt. II.mp3 -> Alone, Pt. II.mp3
+Renamed: 40. Shower.mp3 -> Shower.mp3
+Renamed: 41. Faded.mp3 -> Faded.mp3
+Renamed: 42. Hey Mama (feat. Nicki Minaj, Bebe Rexha & Afrojack).mp3 -> Hey Mama (feat. Nicki Minaj, Bebe Rexha & Afrojack).mp3
+Renamed: 43. Run Free.mp3 -> Run Free.mp3
+Renamed: 44. Alone.mp3 -> Alone.mp3
+Renamed: 45. Blue.mp3 -> Blue.mp3
+Renamed: 46. Gasolina.mp3 -> Gasolina.mp3
+Renamed: 47. Taki Taki (feat. Selena Gomez, Ozuna & Cardi B).mp3 -> Taki Taki (feat. Selena Gomez, Ozuna & Cardi B).mp3
+Renamed: 48. Mask Off.mp3 -> Mask Off.mp3
+Renamed: 49. Nightcall.mp3 -> Nightcall.mp3
+Renamed: 50. Myself.mp3 -> Myself.mp3
+Renamed: 51. Khalouni N3ich (Extended Mix).mp3 -> Khalouni N3ich (Extended Mix).mp3
+Renamed: 52. Tigini - Remix.mp3 -> Tigini - Remix.mp3
+Renamed: 53. Probleme.mp3 -> Probleme.mp3
+Renamed: 54. Go Down Deh (feat. Sean Paul & Shaggy).mp3 -> Go Down Deh (feat. Sean Paul & Shaggy).mp3
+Renamed: 55. Can't Buy Me Loving _ La La La.mp3 -> Can't Buy Me Loving _ La La La.mp3
+Renamed: 56. love nwantiti (feat. Dj Yo! & AX'EL) - Remix.mp3 -> love nwantiti (feat. Dj Yo! & AX'EL) - Remix.mp3
+Renamed: 57. Hymn for the Weekend - Seeb Remix.mp3 -> Hymn for the Weekend - Seeb Remix.mp3
+Renamed: 58. Shape of You - Stormzy Remix.mp3 -> Shape of You - Stormzy Remix.mp3
+Renamed: 59. One Kiss (with Dua Lipa).mp3 -> One Kiss (with Dua Lipa).mp3
+Renamed: 60. Timber.mp3 -> Timber.mp3
+Renamed: 61. Rise Up.mp3 -> Rise Up.mp3
+Renamed: 62. On My Way.mp3 -> On My Way.mp3
+Renamed: 63. I Ain't Worried.mp3 -> I Ain't Worried.mp3
+Renamed: 64. Someday.mp3 -> Someday.mp3
+Renamed: 65. If I Lose Myself.mp3 -> If I Lose Myself.mp3
+Renamed: 66. 2 Phút Hơn - KAIZ Remix.mp3 -> 2 Phút Hơn - KAIZ Remix.mp3
+Renamed: 67. Headlights (feat. KIDDO).mp3 -> Headlights (feat. KIDDO).mp3
+Renamed: 68. Wonderland.mp3 -> Wonderland.mp3
+Renamed: 69. Dusk Till Dawn (feat. Sia) - Radio Edit.mp3 -> Dusk Till Dawn (feat. Sia) - Radio Edit.mp3
+Renamed: 70. Savage Love (Laxed - Siren Beat).mp3 -> Savage Love (Laxed - Siren Beat).mp3
+Renamed: 71. Miss You.mp3 -> Miss You.mp3
+Renamed: 72. End Of The Night.mp3 -> End Of The Night.mp3
+Renamed: 73. Bones.mp3 -> Bones.mp3
+Renamed: 74. love nwantiti (ah ah ah).mp3 -> love nwantiti (ah ah ah).mp3
+Renamed: 75. Call Me When You Want Call Me When You Need.mp3 -> Call Me When You Want Call Me When You Need.mp3
+Renamed: 76. Wolves.mp3 -> Wolves.mp3
+Renamed: 77. Hislerim.mp3 -> Hislerim.mp3
+Renamed: 78. STAR WALKIN' (League of Legends Worlds Anthem).mp3 -> STAR WALKIN' (League of Legends Worlds Anthem).mp3
+Renamed: 79. Start Again (feat. Logic).mp3 -> Start Again (feat. Logic).mp3
+Renamed: 80. Sunflower - Spider-Man: Into the Spider-Verse.mp3 -> Sunflower - Spider-Man_ Into the Spider-Verse.mp3
+Renamed: 81. Stereo Love.mp3 -> Stereo Love.mp3
+Renamed: 82. Animals.mp3 -> Animals.mp3
+Renamed: 83. DARKSIDE.mp3 -> DARKSIDE.mp3
+Renamed: 84. Waka Waka (This Time for Africa) [The Official 2010 FIFA World Cup (TM) Song] (feat. Freshlyground).mp3 -> Waka Waka (This Time for Africa) [The Official 2010 FIFA World Cup (TM) Song] (feat. Freshlyground).mp3
+Renamed: 85. Limbo.mp3 -> Limbo.mp3
+Renamed: 86. Down.mp3 -> Down.mp3
+Renamed: 87. Tick Tock (feat. 24kGoldn).mp3 -> Tick Tock (feat. 24kGoldn).mp3
+Renamed: 88. Worth It (feat. Kid Ink).mp3 -> Worth It (feat. Kid Ink).mp3
+Renamed: 89. Leave Before You Love Me (with Jonas Brothers).mp3 -> Leave Before You Love Me (with Jonas Brothers).mp3
+Renamed: 90. Bloody Mary.mp3 -> Onna,Harddope,PACANI - Bloody Mary.mp3
+Renamed: 91. As Long As You Love Me.mp3 -> As Long As You Love Me.mp3
+Renamed: 92. Fire!.mp3 -> dle - Fire!.mp3
+Renamed: 93. Give Me a Kiss.mp3 -> Give Me a Kiss.mp3
+Renamed: 94. On The Floor.mp3 -> On The Floor.mp3
+Renamed: 95. Broken Angel (feat. Helena).mp3 -> Broken Angel (feat. Helena).mp3
+Renamed: 96. 1, 2, 3 (feat. Jason Derulo & De La Ghetto).mp3 -> 1, 2, 3 (feat. Jason Derulo & De La Ghetto).mp3
+Renamed: 97. Hymn for the Weekend.mp3 -> Hymn for the Weekend.mp3
+Renamed: 98. Tarantella.mp3 -> Tarantella.mp3
+Renamed: 99. FE!N (feat. Playboi Carti).mp3 -> FE!N (feat. Playboi Carti).mp3
+Renamed: 100. One Love.mp3 -> One Love.mp3
+Could not find mp3 file for id 101
+Could not find mp3 file for id 102
+Could not find mp3 file for id 103
+Could not find mp3 file for id 104
+Could not find mp3 file for id 105
+Could not find mp3 file for id 106
+Could not find mp3 file for id 107
+Could not find mp3 file for id 108
+Could not find mp3 file for id 109
+Could not find mp3 file for id 110
+Could not find mp3 file for id 111
+Could not find mp3 file for id 112
+Could not find mp3 file for id 113
+Could not find mp3 file for id 114
+Updated registry.json
+(node:3828) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Inserted to DB: Blinding Lights
+Inserted to DB: Moth To A Flame (with The Weeknd)
+Inserted to DB: STAY (with Justin Bieber)
+Inserted to DB: Let Me Love You
+Inserted to DB: Fearless Pt. II
+Inserted to DB: Love Your Voice
+Inserted to DB: Heat Waves
+Inserted to DB: Save Your Tears
+Inserted to DB: Closer
+Inserted to DB: Enemy (with JID) - from the series Arcane League of Legends
+Inserted to DB: Believer
+Inserted to DB: Marie - FRIENDS
+Inserted to DB: lovely (with Khalid)
+Inserted to DB: On & On
+Inserted to DB: Despacito
+Inserted to DB: Starboy
+Inserted to DB: One Right Now (with The Weeknd)
+Inserted to DB: Falling
+Inserted to DB: MIDDLE OF THE NIGHT
+Inserted to DB: Baby
+Inserted to DB: rockstar
+Inserted to DB: Señorita
+Inserted to DB: Love Me Like You Do - From Fifty Shades Of Grey
+Inserted to DB: Safari
+Inserted to DB: Unstoppable
+Inserted to DB: Bilionera - Radio Edit
+Inserted to DB: Infinity
+Inserted to DB: Sugar & Brownies
+Inserted to DB: Into Your Arms (feat. Ava Max)
+Inserted to DB: No Lie
+Inserted to DB: Queen of Hearts
+Inserted to DB: MONTERO (Call Me By Your Name)
+Inserted to DB: Tu es la raison
+Inserted to DB: Let Me Down Slowly
+Inserted to DB: Levitating
+Inserted to DB: Darkside
+Inserted to DB: Dusk Till Dawn (feat. Sia) - Radio Edit
+Inserted to DB: Alone, Pt. II
+Inserted to DB: Shower
+Inserted to DB: Faded
+Inserted to DB: Hey Mama (feat. Nicki Minaj, Bebe Rexha & Afrojack)
+Inserted to DB: Run Free
+Inserted to DB: Alone
+Inserted to DB: Blue
+Inserted to DB: Gasolina
+Inserted to DB: Taki Taki (feat. Selena Gomez, Ozuna & Cardi B)
+Inserted to DB: Mask Off
+Inserted to DB: Nightcall
+Inserted to DB: Myself
+Inserted to DB: Khalouni N3ich (Extended Mix)
+Inserted to DB: Tigini - Remix
+Inserted to DB: Probleme
+Inserted to DB: Go Down Deh (feat. Sean Paul & Shaggy)
+Inserted to DB: Can't Buy Me Loving / La La La
+Inserted to DB: love nwantiti (feat. Dj Yo! & AX'EL) - Remix
+Inserted to DB: Hymn for the Weekend - Seeb Remix
+Inserted to DB: Shape of You - Stormzy Remix
+Inserted to DB: One Kiss (with Dua Lipa)
+Inserted to DB: Timber
+Inserted to DB: Rise Up
+Inserted to DB: On My Way
+Inserted to DB: I Ain't Worried
+Inserted to DB: Someday
+Inserted to DB: If I Lose Myself
+Inserted to DB: 2 Phút Hơn - KAIZ Remix
+Inserted to DB: Headlights (feat. KIDDO)
+Inserted to DB: Wonderland
+Inserted to DB: Dusk Till Dawn (feat. Sia) - Radio Edit
+Inserted to DB: Savage Love (Laxed - Siren Beat)
+Inserted to DB: Miss You
+Inserted to DB: End Of The Night
+Inserted to DB: Bones
+Inserted to DB: love nwantiti (ah ah ah)
+Inserted to DB: Call Me When You Want Call Me When You Need
+Inserted to DB: Wolves
+Inserted to DB: Hislerim
+Inserted to DB: STAR WALKIN' (League of Legends Worlds Anthem)
+Inserted to DB: Start Again (feat. Logic)
+Inserted to DB: Sunflower - Spider-Man: Into the Spider-Verse
+Inserted to DB: Stereo Love
+Inserted to DB: Animals
+Inserted to DB: DARKSIDE
+Inserted to DB: Waka Waka (This Time for Africa) [The Official 2010 FIFA World Cup (TM) Song] (feat. Freshlyground)
+Inserted to DB: Limbo
+Inserted to DB: Down
+Inserted to DB: Tick Tock (feat. 24kGoldn)
+Inserted to DB: Worth It (feat. Kid Ink)
+Inserted to DB: Leave Before You Love Me (with Jonas Brothers)
+Inserted to DB: Onna,Harddope,PACANI - Bloody Mary
+Inserted to DB: As Long As You Love Me
+Inserted to DB: dle - Fire!
+Inserted to DB: Give Me a Kiss
+Inserted to DB: On The Floor
+Inserted to DB: Broken Angel (feat. Helena)
+Inserted to DB: 1, 2, 3 (feat. Jason Derulo & De La Ghetto)
+Inserted to DB: Hymn for the Weekend
+Inserted to DB: Tarantella
+Inserted to DB: FE!N (feat. Playboi Carti)
+Inserted to DB: One Love
