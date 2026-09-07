@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { GameBoard } from "./GameBoard";
 import { useGame } from "@/hooks/useGame";
 import { useUiStore } from "@/store/ui-store";
-import { Loader2 } from "lucide-react";
+import { Loader2, Settings2, ChevronDown, ChevronUp } from "lucide-react";
 import { toast } from "sonner";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CATEGORIES = [
   { slug: "all", label: "All Genres" },
@@ -71,6 +72,8 @@ export function PracticeGame() {
   const [initialized, setInitialized] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+
   useEffect(() => {
     if (initialized) return;
     setInitialized(true);
@@ -116,48 +119,81 @@ export function PracticeGame() {
   };
 
   const filtersHeader = (
-    <div className="flex flex-col gap-4 items-start w-full">
-      {/* Difficulty filter */}
-      <div className="flex gap-2 justify-start flex-wrap" role="group" aria-label="Select difficulty">
-        {DIFFICULTIES.map((diff) => (
-          <button
-            key={diff.slug}
-            onClick={() => void handleDifficultyChange(diff.slug)}
-            aria-pressed={activeDifficulty === diff.slug}
-            className={`shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getDiffClass(diff.slug, activeDifficulty === diff.slug)}`}
-          >
-            {diff.label}
-          </button>
-        ))}
-      </div>
+    <div className="flex flex-col gap-2 items-start w-full">
+      <button
+        onClick={() => setIsFiltersOpen(!isFiltersOpen)}
+        className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors p-2 -ml-2 rounded-md hover:bg-accent"
+        aria-expanded={isFiltersOpen}
+      >
+        <Settings2 className="w-4 h-4" />
+        Game Settings
+        {isFiltersOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+      </button>
 
-      {/* Language filter */}
-      <div className="flex gap-2 justify-start flex-wrap" role="group" aria-label="Select language">
-        {LANGUAGES.map((lang) => (
-          <button
-            key={lang.slug}
-            onClick={() => void handleLanguageChange(lang.slug)}
-            aria-pressed={activeLanguage === lang.slug}
-            className={`shrink-0 px-3 py-1 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getLangClass(lang.slug, activeLanguage === lang.slug)}`}
+      <AnimatePresence initial={false}>
+        {isFiltersOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden w-full"
           >
-            {lang.label}
-          </button>
-        ))}
-      </div>
+            <div className="flex flex-col gap-4 py-2 w-full border-t">
+              {/* Difficulty filter */}
+              <div className="flex flex-col gap-1.5">
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Difficulty</span>
+                <div className="flex gap-2 justify-start flex-wrap" role="group" aria-label="Select difficulty">
+                  {DIFFICULTIES.map((diff) => (
+                    <button
+                      key={diff.slug}
+                      onClick={() => void handleDifficultyChange(diff.slug)}
+                      aria-pressed={activeDifficulty === diff.slug}
+                      className={`shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getDiffClass(diff.slug, activeDifficulty === diff.slug)}`}
+                    >
+                      {diff.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
 
-      {/* Category filter */}
-      <div className="flex gap-2 justify-start flex-wrap pb-1" role="group" aria-label="Select category">
-        {CATEGORIES.map((cat) => (
-          <button
-            key={cat.slug}
-            onClick={() => void handleCategoryChange(cat.slug)}
-            aria-pressed={activeCategory === cat.slug}
-            className={`shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getCatClass(cat.slug, activeCategory === cat.slug)}`}
-          >
-            {cat.label}
-          </button>
-        ))}
-      </div>
+              {/* Language filter */}
+              <div className="flex flex-col gap-1.5">
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Language</span>
+                <div className="flex gap-2 justify-start flex-wrap" role="group" aria-label="Select language">
+                  {LANGUAGES.map((lang) => (
+                    <button
+                      key={lang.slug}
+                      onClick={() => void handleLanguageChange(lang.slug)}
+                      aria-pressed={activeLanguage === lang.slug}
+                      className={`shrink-0 px-3 py-1 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getLangClass(lang.slug, activeLanguage === lang.slug)}`}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Category filter */}
+              <div className="flex flex-col gap-1.5">
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Genre</span>
+                <div className="flex gap-2 justify-start flex-wrap pb-1" role="group" aria-label="Select category">
+                  {CATEGORIES.map((cat) => (
+                    <button
+                      key={cat.slug}
+                      onClick={() => void handleCategoryChange(cat.slug)}
+                      aria-pressed={activeCategory === cat.slug}
+                      className={`shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getCatClass(cat.slug, activeCategory === cat.slug)}`}
+                    >
+                      {cat.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 
