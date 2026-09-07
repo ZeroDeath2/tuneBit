@@ -1,25 +1,32 @@
 import { MusicProvider, Track } from "./types";
-import { readFileSync, existsSync } from "fs";
-import { join } from "path";
 
 interface LocalTrack extends Track {
   file: string; // The filename in public/audio/
 }
 
 export class LocalMusicProvider implements MusicProvider {
-  private getRegistry(): Record<string, LocalTrack> {
+  private async getRegistry(): Promise<Record<string, LocalTrack>> {
     try {
-      const path = join(process.cwd(), "public/audio/registry.json");
-      if (!existsSync(path)) return {};
-      return JSON.parse(readFileSync(path, "utf-8"));
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      if (!supabaseUrl) return {};
+      
+      const registryUrl = `${supabaseUrl}/storage/v1/object/public/audio/registry.json`;
+      const res = await fetch(registryUrl, { next: { revalidate: 3600 } });
+      
+      if (!res.ok) {
+        console.error("[LocalMusicProvider] Failed to fetch registry from Supabase");
+        return {};
+      }
+      
+      return await res.json();
     } catch (err) {
-      console.error("[LocalMusicProvider] Failed to read registry:", err);
+      console.error("[LocalMusicProvider] Error reading registry:", err);
       return {};
     }
   }
 
   async searchTracks(query: string, limit = 10, language?: string): Promise<Track[]> {
-    const registry = this.getRegistry();
+    const registry = await this.getRegistry();
     let tracks = Object.values(registry);
     
     if (language && language !== "all") {
@@ -41,12 +48,12 @@ export class LocalMusicProvider implements MusicProvider {
   }
 
   async getTrack(id: string): Promise<Track | null> {
-    const registry = this.getRegistry();
+    const registry = await this.getRegistry();
     return registry[id] || null;
   }
 
   async getStreamUrl(id: string): Promise<string | null> {
-    const registry = this.getRegistry();
+    const registry = await this.getRegistry();
     const track = registry[id];
     if (!track) return null;
     
@@ -57,7 +64,6 @@ export class LocalMusicProvider implements MusicProvider {
       return `${supabaseUrl}/storage/v1/object/public/audio/${encodeURIComponent(track.file)}`;
     }
     
-    // Fallback to local if no Supabase URL is found
-    return `/audio/${encodeURIComponent(track.file)}`;
+    return null;
   }
 }
