@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL ?? "https://tunebit.zeusserver.in"
   ),
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "TuneBit",
+  },
   openGraph: {
     title: "TuneBit — Daily Music Guessing Game",
     description: "Identify the song from progressively longer audio clips.",
