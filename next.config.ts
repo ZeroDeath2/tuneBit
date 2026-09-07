@@ -37,6 +37,14 @@ const nextConfig: NextConfig = {
       allowedOrigins: [process.env.NEXT_PUBLIC_APP_URL ?? "localhost:3000"],
     },
   },
+  async rewrites() {
+    return [
+      {
+        source: "/favicon.ico",
+        destination: "/icon.svg",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
