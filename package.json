@@ -35,7 +35,7 @@
     "@supabase/supabase-js": "latest",
     "class-variance-authority": "latest",
     "clsx": "latest",
-    "framer-motion": "latest",
+    "framer-motion": "^13.2.0",
     "lucide-react": "latest",
     "next": "^15.3.4",
     "next-themes": "latest",

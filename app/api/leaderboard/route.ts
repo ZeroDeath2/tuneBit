@@ -1,19 +1,9 @@
 import { NextResponse } from "next/server";
-import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server";
+import { createServiceRoleClient } from "@/lib/supabase/server";
 import { LeaderboardQuerySchema } from "@/lib/validation";
 
 export async function GET(request: Request) {
   try {
-    const supabase = await createServerClient();
-    const { data: { user } } = await supabase.auth.getUser();
-
-    if (!user) {
-      return NextResponse.json(
-        { error: "Authentication required to view the leaderboard" },
-        { status: 401 }
-      );
-    }
-
     const { searchParams } = new URL(request.url);
     const parsed = LeaderboardQuerySchema.safeParse({
       window: searchParams.get("window") ?? "today",

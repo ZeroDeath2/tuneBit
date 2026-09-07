@@ -26,7 +26,6 @@ export function LeaderboardView() {
     setError(null);
     fetch(`/api/leaderboard?window=${window}`)
       .then((r) => {
-        if (r.status === 401) throw new Error("Sign in to view the leaderboard");
         if (!r.ok) throw new Error("Failed to load leaderboard");
         return r.json() as Promise<{ entries: LeaderboardEntry[] }>;
       })

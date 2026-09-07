@@ -72,7 +72,9 @@ export function PracticeGame() {
   const [initialized, setInitialized] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  const [isDifficultyOpen, setIsDifficultyOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [isGenreOpen, setIsGenreOpen] = useState(false);
 
   useEffect(() => {
     if (initialized) return;
@@ -120,80 +122,135 @@ export function PracticeGame() {
 
   const filtersHeader = (
     <div className="flex flex-col gap-2 items-start w-full">
-      <button
-        onClick={() => setIsFiltersOpen(!isFiltersOpen)}
-        className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors p-2 -ml-2 rounded-md hover:bg-accent"
-        aria-expanded={isFiltersOpen}
-      >
-        <Settings2 className="w-4 h-4" />
-        Game Settings
-        {isFiltersOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-      </button>
-
-      <AnimatePresence initial={false}>
-        {isFiltersOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="overflow-hidden w-full"
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 w-full pb-2 border-b border-border/50">
+        
+        {/* Difficulty Toggle */}
+        <div className="flex flex-col gap-1">
+          <button
+            onClick={() => setIsDifficultyOpen(!isDifficultyOpen)}
+            className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 -ml-2 rounded-md hover:bg-accent"
+            aria-expanded={isDifficultyOpen}
           >
-            <div className="flex flex-col gap-4 py-2 w-full border-t">
-              {/* Difficulty filter */}
-              <div className="flex flex-col gap-1.5">
-                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Difficulty</span>
-                <div className="flex gap-2 justify-start flex-wrap" role="group" aria-label="Select difficulty">
+            Difficulty 
+            <span className="text-xs ml-1 px-1.5 py-0.5 rounded-full bg-accent text-accent-foreground font-semibold">
+              {DIFFICULTIES.find(d => d.slug === activeDifficulty)?.label}
+            </span>
+            {isDifficultyOpen ? <ChevronUp className="w-3.5 h-3.5 ml-1" /> : <ChevronDown className="w-3.5 h-3.5 ml-1" />}
+          </button>
+          <AnimatePresence initial={false}>
+            {isDifficultyOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="overflow-hidden"
+              >
+                <div className="flex gap-2 justify-start flex-wrap py-2" role="group" aria-label="Select difficulty">
                   {DIFFICULTIES.map((diff) => (
                     <button
                       key={diff.slug}
-                      onClick={() => void handleDifficultyChange(diff.slug)}
+                      onClick={() => {
+                        void handleDifficultyChange(diff.slug);
+                        setIsDifficultyOpen(false);
+                      }}
                       aria-pressed={activeDifficulty === diff.slug}
-                      className={`shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getDiffClass(diff.slug, activeDifficulty === diff.slug)}`}
+                      className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getDiffClass(diff.slug, activeDifficulty === diff.slug)}`}
                     >
                       {diff.label}
                     </button>
                   ))}
                 </div>
-              </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
-              {/* Language filter */}
-              <div className="flex flex-col gap-1.5">
-                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Language</span>
-                <div className="flex gap-2 justify-start flex-wrap" role="group" aria-label="Select language">
+        {/* Language Toggle */}
+        <div className="flex flex-col gap-1">
+          <button
+            onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+            className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 -ml-2 rounded-md hover:bg-accent"
+            aria-expanded={isLanguageOpen}
+          >
+            Language
+            <span className="text-xs ml-1 px-1.5 py-0.5 rounded-full bg-accent text-accent-foreground font-semibold">
+              {LANGUAGES.find(l => l.slug === activeLanguage)?.label}
+            </span>
+            {isLanguageOpen ? <ChevronUp className="w-3.5 h-3.5 ml-1" /> : <ChevronDown className="w-3.5 h-3.5 ml-1" />}
+          </button>
+          <AnimatePresence initial={false}>
+            {isLanguageOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="overflow-hidden"
+              >
+                <div className="flex gap-2 justify-start flex-wrap py-2" role="group" aria-label="Select language">
                   {LANGUAGES.map((lang) => (
                     <button
                       key={lang.slug}
-                      onClick={() => void handleLanguageChange(lang.slug)}
+                      onClick={() => {
+                        void handleLanguageChange(lang.slug);
+                        setIsLanguageOpen(false);
+                      }}
                       aria-pressed={activeLanguage === lang.slug}
-                      className={`shrink-0 px-3 py-1 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getLangClass(lang.slug, activeLanguage === lang.slug)}`}
+                      className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getLangClass(lang.slug, activeLanguage === lang.slug)}`}
                     >
                       {lang.label}
                     </button>
                   ))}
                 </div>
-              </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
-              {/* Category filter */}
-              <div className="flex flex-col gap-1.5">
-                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Genre</span>
-                <div className="flex gap-2 justify-start flex-wrap pb-1" role="group" aria-label="Select category">
+        {/* Genre Toggle */}
+        <div className="flex flex-col gap-1">
+          <button
+            onClick={() => setIsGenreOpen(!isGenreOpen)}
+            className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 -ml-2 rounded-md hover:bg-accent"
+            aria-expanded={isGenreOpen}
+          >
+            Genre
+            <span className="text-xs ml-1 px-1.5 py-0.5 rounded-full bg-accent text-accent-foreground font-semibold">
+              {CATEGORIES.find(c => c.slug === activeCategory)?.label}
+            </span>
+            {isGenreOpen ? <ChevronUp className="w-3.5 h-3.5 ml-1" /> : <ChevronDown className="w-3.5 h-3.5 ml-1" />}
+          </button>
+          <AnimatePresence initial={false}>
+            {isGenreOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="overflow-hidden"
+              >
+                <div className="flex gap-2 justify-start flex-wrap py-2" role="group" aria-label="Select category">
                   {CATEGORIES.map((cat) => (
                     <button
                       key={cat.slug}
-                      onClick={() => void handleCategoryChange(cat.slug)}
+                      onClick={() => {
+                        void handleCategoryChange(cat.slug);
+                        setIsGenreOpen(false);
+                      }}
                       aria-pressed={activeCategory === cat.slug}
-                      className={`shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getCatClass(cat.slug, activeCategory === cat.slug)}`}
+                      className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 border ${getCatClass(cat.slug, activeCategory === cat.slug)}`}
                     >
                       {cat.label}
                     </button>
                   ))}
                 </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+      </div>
     </div>
   );
 
