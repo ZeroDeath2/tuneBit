@@ -33,6 +33,7 @@ export function AudioPlayer({
   const stages = getRevealStages(difficulty);
   const finalStageDuration = stages[stages.length - 1] as number;
   const [audioDuration, setAudioDuration] = useState<number>(finalStageDuration);
+  const START_OFFSET = 5;
   
   useEffect(() => {
     if (!isComplete) {
@@ -120,7 +121,7 @@ export function AudioPlayer({
     const audio = audioRef.current;
     if (!audio) return;
 
-    if (!isComplete && audio.currentTime >= revealDuration) {
+    if (!isComplete && audio.currentTime >= START_OFFSET + revealDuration) {
       audio.pause();
       setProgress(revealDuration);
       setPlayerState("paused"); // changed from ended to paused because the song hasn't truly ended, just the reveal duration
@@ -128,7 +129,7 @@ export function AudioPlayer({
       return;
     }
 
-    setProgress(audio.currentTime);
+    setProgress(Math.max(0, audio.currentTime - START_OFFSET));
     animFrameRef.current = requestAnimationFrame(trackProgress);
   }, [revealDuration, stopTrackingProgress, isComplete]);
 
@@ -136,8 +137,12 @@ export function AudioPlayer({
     const audio = audioRef.current;
     if (!audio || disabled) return;
 
-    if (playerState === "ended" || (!isComplete && audio.currentTime >= revealDuration)) {
-      audio.currentTime = 0;
+    if (
+      playerState === "ended" || 
+      (!isComplete && audio.currentTime >= START_OFFSET + revealDuration) ||
+      audio.currentTime < START_OFFSET
+    ) {
+      audio.currentTime = START_OFFSET;
     }
 
     setPlayerState("playing");
